@@ -1,5 +1,5 @@
 {% set name = "intake-dataframe-catalog" %}
-{% set version = "0.2.3" %}
+{% set version = "0.2.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/intake_dataframe_catalog-{{ version }}.tar.gz
-  sha256: 6ea2aef02504fd3b40b83728fceab9b4849f155e4eb7c0e181578c16fe3bb4c0
+  sha256: 2379d25b2951c65ca3928ff7d98f7c79c5dedece2e70699ef85a54afee8efe91
 
 build:
   noarch: python
@@ -16,13 +16,13 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python >=3.9
     - setuptools >=61.0.0
     - versioneer
     - pip
   run:
-    - python >=3.7
-    - intake
+    - python >=3.9
+    - intake <2.0.0
     - pandas
 
 test:
