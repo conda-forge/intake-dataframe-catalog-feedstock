@@ -1,5 +1,6 @@
 {% set name = "intake-dataframe-catalog" %}
-{% set version = "0.3" %}
+{% set version = "0.3.1" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +8,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/intake_dataframe_catalog-{{ version }}.tar.gz
-  sha256: b9b30b85b6fac5b0588812687b90aa1b533726562f50349ee99b494c27deb52a
+  sha256: 209f1099675adaa174baa027f8d8627730fee30f7413e032722be7263377f2bd
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -21,8 +22,12 @@ requirements:
     - versioneer
     - pip
   run:
+    - fsspec
+    - numpy
+    - pyyaml
+    - toolz
     - python >={{ python_min }}
-    - intake <2.0.0
+    - intake >=0.7.0
     - pandas
 
 test:
