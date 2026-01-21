@@ -1,5 +1,5 @@
 {% set name = "intake-dataframe-catalog" %}
-{% set version = "0.5.0" %}
+{% set version = "0.5.1" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/intake_dataframe_catalog-{{ version }}.tar.gz
-  sha256: 2f561407e889715cec9841e63b568c89979a277e5c9ba7ffb601ba3d0d2ed663
+  sha256: 4e4d6d542cf8c9afc88bf480ffc685826541b2d94d8c1a6c91427afc1920f980
 
 build:
   noarch: python
